@@ -37,6 +37,8 @@ vim.cmd('packadd! nohlsearch')
 -- 	Is it good to have this quick an update?
 vim.o.updatetime = 250
 
+-- Enable termguicolors for catppuccin
+vim.opt.termguicolors = true
 
 -------- Rip Grep ----------
 -- Replaces standard grep with Ripgrep for neovim
