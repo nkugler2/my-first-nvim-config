@@ -4,4 +4,5 @@ return {
     { import = "plugins.telescope" },
     { import = "plugins.harpoon" },
     { import = "plugins.treesitter-context" },
+    { import = "plugins.undotree" },
 }

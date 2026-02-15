@@ -55,6 +55,7 @@ vim.o.grepformat = '%f:%l:%c:%m'
 ------------------------------- Editing Changes -----------------------------------
 
 -- Persistent Undo - Keeps undo history on disk, so have it even after closing a file
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.o.undofile = true
 
 vim.o.expandtab = true    -- use spaces instead of tabs
