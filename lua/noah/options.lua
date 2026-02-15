@@ -38,6 +38,18 @@ vim.cmd('packadd! nohlsearch')
 vim.o.updatetime = 250
 
 
+-------- Rip Grep ----------
+-- Replaces standard grep with Ripgrep for neovim
+vim.o.grepprg = 'rg --vimgrep'
+
+-- Formatting ripgrep
+-- %f — filename
+-- %l — line number
+-- %c — column number
+-- %m — match text (the rest of the line)
+vim.o.grepformat = '%f:%l:%c:%m'
+
+
 ------------------------------- Editing Changes -----------------------------------
 
 -- Persistent Undo - Keeps undo history on disk, so have it even after closing a file
@@ -48,11 +60,16 @@ vim.o.shiftwidth = 4      -- indent width (can change to 2)
 vim.o.tabstop = 4         -- tab display width
 vim.o.smartindent = true  -- auto-indent new lines based on syntax
 
+vim.o.inccommand = 'split'
+
+-- Should relate to the "Show <tab> and trailing spaces from the video suggestions above
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 
 ------------------------------- Visual Changes -----------------------------------
 
 -- Split behavior - Default feels backwards
-vim.o.splitright =   -- vertical splits open to the right instead of left
+vim.o.splitright = true  -- vertical splits open to the right instead of left
 vim.o.splitbelow = true  -- horizontal splits open below instead of above
 
 -- where git markers, diagnostics, etc. appear - this makes these always visable
