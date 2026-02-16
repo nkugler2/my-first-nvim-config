@@ -78,3 +78,4 @@ vim.o.splitbelow = true  -- horizontal splits open below instead of above
 -- where git markers, diagnostics, etc. appear - this makes these always visable
 -- Basically makes the line numbers always slightly more to the right to leave room on the left
 vim.o.signcolumn = 'yes'
+
