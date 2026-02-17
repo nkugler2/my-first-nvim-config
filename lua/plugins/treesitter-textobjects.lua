@@ -83,23 +83,35 @@ return  {
           --- can add other things here like function, class attributes, etc. ---
 
           -- Finally, we define the move to next/previous textobjects
-          vim.keymap.set({ "n", "x", "o" }, "<leader>c", function()
+          vim.keymap.set({ "n", "x", "o" }, "]n", function()
             require("nvim-treesitter-textobjects.move").goto_next_start("@comment.outer", "textobjects")
           end)
-          vim.keymap.set({ "n", "x", "o" }, "<leader>C", function()
+          vim.keymap.set({ "n", "x", "o" }, "[n", function()
             require("nvim-treesitter-textobjects.move").goto_previous_start("@comment.outer", "textobjects")
           end)
-          vim.keymap.set({ "n", "x", "o" }, "<leader>m", function()
+          vim.keymap.set({ "n", "x", "o" }, "]m", function()
             require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
           end)
-          vim.keymap.set({ "n", "x", "o" }, "<leader>M", function()
+          vim.keymap.set({ "n", "x", "o" }, "[m", function()
             require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
           end)
-          vim.keymap.set({ "n", "x", "o" }, "<leader>p", function()
+          vim.keymap.set({ "n", "x", "o" }, "]p", function()
             require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.outer", "textobjects")
           end)
-          vim.keymap.set({ "n", "x", "o" }, "<leader>P", function()
+          vim.keymap.set({ "n", "x", "o" }, "[p", function()
             require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.outer", "textobjects")
           end)
+          vim.keymap.set({ "n", "x", "o" }, "]c", function()
+            require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "[c", function()
+            require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
+          end)
+
+          -- Repeat movement with ; and ,
+          -- ensure ; goes forward and , goes backward regardless of the last direction
+          local ts_repeat_move = require "nvim-treesitter-textobjects.repeatable_move"
+          vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+          vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
       end,
 }
