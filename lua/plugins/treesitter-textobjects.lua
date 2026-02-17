@@ -62,10 +62,12 @@ return  {
           vim.keymap.set({ "x", "o" }, "ic", function()
             require "nvim-treesitter-textobjects.select".select_textobject("@class.inner", "textobjects")
           end)
+
           -- You can also use captures from other query groups like `locals.scm`
           vim.keymap.set({ "x", "o" }, "as", function()
             require "nvim-treesitter-textobjects.select".select_textobject("@local.scope", "locals")
           end)
+          -- These next ones are for swaping things like parameters and statements (sentances)
           vim.keymap.set("n", "<leader>a", function()
             require("nvim-treesitter-textobjects.swap").swap_next "@parameter.outer"
           end)
@@ -79,5 +81,25 @@ return  {
             require("nvim-treesitter-textobjects.swap").swap_previous "@statement.outer"
           end)
           --- can add other things here like function, class attributes, etc. ---
+
+          -- Finally, we define the move to next/previous textobjects
+          vim.keymap.set({ "n", "x", "o" }, "<leader>c", function()
+            require("nvim-treesitter-textobjects.move").goto_next_start("@comment.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "<leader>C", function()
+            require("nvim-treesitter-textobjects.move").goto_previous_start("@comment.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "<leader>m", function()
+            require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "<leader>M", function()
+            require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "<leader>p", function()
+            require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.outer", "textobjects")
+          end)
+          vim.keymap.set({ "n", "x", "o" }, "<leader>P", function()
+            require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.outer", "textobjects")
+          end)
       end,
 }
