@@ -58,10 +58,10 @@ vim.o.grepformat = '%f:%l:%c:%m'
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.o.undofile = true
 
-vim.o.expandtab = true    -- use spaces instead of tabs
-vim.o.shiftwidth = 4      -- indent width (can change to 2)
-vim.o.tabstop = 4         -- tab display width
-vim.o.smartindent = true  -- auto-indent new lines based on syntax
+vim.o.expandtab = true   -- use spaces instead of tabs
+vim.o.shiftwidth = 4     -- indent width (can change to 2)
+vim.o.tabstop = 4        -- tab display width
+vim.o.smartindent = true -- auto-indent new lines based on syntax
 
 vim.o.inccommand = 'split'
 
@@ -72,10 +72,9 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 ------------------------------- Visual Changes -----------------------------------
 
 -- Split behavior - Default feels backwards
-vim.o.splitright = true  -- vertical splits open to the right instead of left
-vim.o.splitbelow = true  -- horizontal splits open below instead of above
+vim.o.splitright = true -- vertical splits open to the right instead of left
+vim.o.splitbelow = true -- horizontal splits open below instead of above
 
 -- where git markers, diagnostics, etc. appear - this makes these always visable
 -- Basically makes the line numbers always slightly more to the right to leave room on the left
 vim.o.signcolumn = 'yes'
-

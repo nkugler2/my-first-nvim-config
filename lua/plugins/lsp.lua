@@ -19,17 +19,17 @@ return {
         },
         opts = {
             ensure_installed = {
-                "pyright",       -- Python - type checking and completion
-                "ruff",          -- Python - linting and formatting
-                "lua_ls",        -- Lua
-                "yamlls",        -- YAML
-                "html",          -- HTML
-                "cssls",         -- CSS
-                "ts_ls",         -- JavaScript (and TypeScript)
-                "jsonls",        -- JSON
-                "sqlls",         -- SQL - might want to try sqls if I want to execute code?
-                "dockerls",      -- Dockerfile
-                "marksman",      -- Markdown
+                "pyright",  -- Python - type checking and completion
+                "ruff",     -- Python - linting and formatting
+                "lua_ls",   -- Lua
+                "yamlls",   -- YAML
+                "html",     -- HTML
+                "cssls",    -- CSS
+                "ts_ls",    -- JavaScript (and TypeScript)
+                "jsonls",   -- JSON
+                "sqlls",    -- SQL - might want to try sqls if I want to execute code?
+                "dockerls", -- Dockerfile
+                "marksman", -- Markdown
             },
             -- automatic_enable is true by default in v2, so all installed
             -- servers get enabled via vim.lsp.enable() automatically

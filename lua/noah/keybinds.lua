@@ -14,7 +14,7 @@ vim.keymap.set('x', '>', '>gv')
 
 -- Normal behavior: All text during one insert mode counts towards 1 undo
 -- This behavior: Punctuations are now what counts for undo steps
--- ALlows: for undoing sentances/smaller sections rather than paragraphs or 
+-- ALlows: for undoing sentances/smaller sections rather than paragraphs or
 --  larger sections of text
 vim.keymap.set('i', ',', ',<c-g>u')
 vim.keymap.set('i', '.', '.<c-g>u')
@@ -36,4 +36,3 @@ vim.keymap.set('n', '<M-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window he
 vim.keymap.set('n', '<M-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window height' })
 vim.keymap.set('n', '<M-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<M-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
-
