@@ -3,6 +3,8 @@
 
 -- Print the line number in front of each line
 vim.o.number = true
+-- Use relative line numbers
+vim.opt.relativenumber = true
 
 -- Highlight the line where the cursor is on
 -- Very subtle when i first did this, see if I can make this more apparent
@@ -63,6 +65,7 @@ vim.o.shiftwidth = 4     -- indent width (can change to 2)
 vim.o.tabstop = 4        -- tab display width
 vim.o.smartindent = true -- auto-indent new lines based on syntax
 
+-- Live preview of subsitution command (:s)
 vim.o.inccommand = 'split'
 
 -- Should relate to the "Show <tab> and trailing spaces from the video suggestions above
@@ -78,3 +81,8 @@ vim.o.splitbelow = true -- horizontal splits open below instead of above
 -- where git markers, diagnostics, etc. appear - this makes these always visable
 -- Basically makes the line numbers always slightly more to the right to leave room on the left
 vim.o.signcolumn = 'yes'
+
+-- to make distinct windows for things like autocomplete
+vim.o.winborder = 'rounded'
+-- vim.o.pumborder = 'rounded'
+-- vim.o.pummaxwidth = 40

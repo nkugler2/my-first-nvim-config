@@ -1,6 +1,7 @@
 ----------------- My Keybinds ---------------
 --- These should be things that start with:
 --- `vim.keymap.set(`
+--- Keybindings for a plugin are in that plugins lua file
 
 -- This changes the annoying keybind for going to normal mode in the termianl
 -- from Ctrl \ and then Ctrl n t0 just Escape
@@ -31,8 +32,12 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = "Go to Upper Window", remap = tr
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = "Go to Right Window", remap = true })
 
 -- Using Alt/Option for resizing instead of Control
--- Not working???
 vim.keymap.set('n', '<M-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window height' })
 vim.keymap.set('n', '<M-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window height' })
 vim.keymap.set('n', '<M-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<M-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
+
+-- Keymap to open temrinal in vertical split
+vim.keymap.set('n', '<leader>th', ':split | terminal<CR>', { desc = 'Open terminal in horizontal split' })
+vim.keymap.set('n', '<leader>tv', ':vertical split | terminal<CR>', { desc = 'Open terminal in horizontal split' })
+

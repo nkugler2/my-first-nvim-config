@@ -8,4 +8,5 @@ require("noah.keybinds")
 require("noah.autocmds")
 require("noah.languages")
 
--- My Plugins
+-- Experimental Plugin
+-- require("vim._extui").enable({})
